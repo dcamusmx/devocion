@@ -10,33 +10,129 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RosarioMariaIndexRouteImport } from './routes/rosario-maria.index'
+import { Route as RosarioMariaRosarioRouteImport } from './routes/rosario-maria.rosario'
+import { Route as RosarioMariaOfrecimientoRouteImport } from './routes/rosario-maria.ofrecimiento'
+import { Route as RosarioMariaLetaniasRouteImport } from './routes/rosario-maria.letanias'
+import { Route as RosarioMariaInicialesRouteImport } from './routes/rosario-maria.iniciales'
+import { Route as RosarioMariaConclusionRouteImport } from './routes/rosario-maria.conclusion'
+import { Route as RosarioMariaAvesSalveRouteImport } from './routes/rosario-maria.aves-salve'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RosarioMariaIndexRoute = RosarioMariaIndexRouteImport.update({
+  id: '/rosario-maria/',
+  path: '/rosario-maria/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RosarioMariaRosarioRoute = RosarioMariaRosarioRouteImport.update({
+  id: '/rosario-maria/rosario',
+  path: '/rosario-maria/rosario',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RosarioMariaOfrecimientoRoute =
+  RosarioMariaOfrecimientoRouteImport.update({
+    id: '/rosario-maria/ofrecimiento',
+    path: '/rosario-maria/ofrecimiento',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const RosarioMariaLetaniasRoute = RosarioMariaLetaniasRouteImport.update({
+  id: '/rosario-maria/letanias',
+  path: '/rosario-maria/letanias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RosarioMariaInicialesRoute = RosarioMariaInicialesRouteImport.update({
+  id: '/rosario-maria/iniciales',
+  path: '/rosario-maria/iniciales',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RosarioMariaConclusionRoute = RosarioMariaConclusionRouteImport.update({
+  id: '/rosario-maria/conclusion',
+  path: '/rosario-maria/conclusion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RosarioMariaAvesSalveRoute = RosarioMariaAvesSalveRouteImport.update({
+  id: '/rosario-maria/aves-salve',
+  path: '/rosario-maria/aves-salve',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/rosario-maria/aves-salve': typeof RosarioMariaAvesSalveRoute
+  '/rosario-maria/conclusion': typeof RosarioMariaConclusionRoute
+  '/rosario-maria/iniciales': typeof RosarioMariaInicialesRoute
+  '/rosario-maria/letanias': typeof RosarioMariaLetaniasRoute
+  '/rosario-maria/ofrecimiento': typeof RosarioMariaOfrecimientoRoute
+  '/rosario-maria/rosario': typeof RosarioMariaRosarioRoute
+  '/rosario-maria/': typeof RosarioMariaIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/rosario-maria/aves-salve': typeof RosarioMariaAvesSalveRoute
+  '/rosario-maria/conclusion': typeof RosarioMariaConclusionRoute
+  '/rosario-maria/iniciales': typeof RosarioMariaInicialesRoute
+  '/rosario-maria/letanias': typeof RosarioMariaLetaniasRoute
+  '/rosario-maria/ofrecimiento': typeof RosarioMariaOfrecimientoRoute
+  '/rosario-maria/rosario': typeof RosarioMariaRosarioRoute
+  '/rosario-maria': typeof RosarioMariaIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/rosario-maria/aves-salve': typeof RosarioMariaAvesSalveRoute
+  '/rosario-maria/conclusion': typeof RosarioMariaConclusionRoute
+  '/rosario-maria/iniciales': typeof RosarioMariaInicialesRoute
+  '/rosario-maria/letanias': typeof RosarioMariaLetaniasRoute
+  '/rosario-maria/ofrecimiento': typeof RosarioMariaOfrecimientoRoute
+  '/rosario-maria/rosario': typeof RosarioMariaRosarioRoute
+  '/rosario-maria/': typeof RosarioMariaIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/rosario-maria/aves-salve'
+    | '/rosario-maria/conclusion'
+    | '/rosario-maria/iniciales'
+    | '/rosario-maria/letanias'
+    | '/rosario-maria/ofrecimiento'
+    | '/rosario-maria/rosario'
+    | '/rosario-maria/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/rosario-maria/aves-salve'
+    | '/rosario-maria/conclusion'
+    | '/rosario-maria/iniciales'
+    | '/rosario-maria/letanias'
+    | '/rosario-maria/ofrecimiento'
+    | '/rosario-maria/rosario'
+    | '/rosario-maria'
+  id:
+    | '__root__'
+    | '/'
+    | '/rosario-maria/aves-salve'
+    | '/rosario-maria/conclusion'
+    | '/rosario-maria/iniciales'
+    | '/rosario-maria/letanias'
+    | '/rosario-maria/ofrecimiento'
+    | '/rosario-maria/rosario'
+    | '/rosario-maria/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  RosarioMariaAvesSalveRoute: typeof RosarioMariaAvesSalveRoute
+  RosarioMariaConclusionRoute: typeof RosarioMariaConclusionRoute
+  RosarioMariaInicialesRoute: typeof RosarioMariaInicialesRoute
+  RosarioMariaLetaniasRoute: typeof RosarioMariaLetaniasRoute
+  RosarioMariaOfrecimientoRoute: typeof RosarioMariaOfrecimientoRoute
+  RosarioMariaRosarioRoute: typeof RosarioMariaRosarioRoute
+  RosarioMariaIndexRoute: typeof RosarioMariaIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +144,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rosario-maria/': {
+      id: '/rosario-maria/'
+      path: '/rosario-maria'
+      fullPath: '/rosario-maria/'
+      preLoaderRoute: typeof RosarioMariaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rosario-maria/rosario': {
+      id: '/rosario-maria/rosario'
+      path: '/rosario-maria/rosario'
+      fullPath: '/rosario-maria/rosario'
+      preLoaderRoute: typeof RosarioMariaRosarioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rosario-maria/ofrecimiento': {
+      id: '/rosario-maria/ofrecimiento'
+      path: '/rosario-maria/ofrecimiento'
+      fullPath: '/rosario-maria/ofrecimiento'
+      preLoaderRoute: typeof RosarioMariaOfrecimientoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rosario-maria/letanias': {
+      id: '/rosario-maria/letanias'
+      path: '/rosario-maria/letanias'
+      fullPath: '/rosario-maria/letanias'
+      preLoaderRoute: typeof RosarioMariaLetaniasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rosario-maria/iniciales': {
+      id: '/rosario-maria/iniciales'
+      path: '/rosario-maria/iniciales'
+      fullPath: '/rosario-maria/iniciales'
+      preLoaderRoute: typeof RosarioMariaInicialesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rosario-maria/conclusion': {
+      id: '/rosario-maria/conclusion'
+      path: '/rosario-maria/conclusion'
+      fullPath: '/rosario-maria/conclusion'
+      preLoaderRoute: typeof RosarioMariaConclusionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rosario-maria/aves-salve': {
+      id: '/rosario-maria/aves-salve'
+      path: '/rosario-maria/aves-salve'
+      fullPath: '/rosario-maria/aves-salve'
+      preLoaderRoute: typeof RosarioMariaAvesSalveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  RosarioMariaAvesSalveRoute: RosarioMariaAvesSalveRoute,
+  RosarioMariaConclusionRoute: RosarioMariaConclusionRoute,
+  RosarioMariaInicialesRoute: RosarioMariaInicialesRoute,
+  RosarioMariaLetaniasRoute: RosarioMariaLetaniasRoute,
+  RosarioMariaOfrecimientoRoute: RosarioMariaOfrecimientoRoute,
+  RosarioMariaRosarioRoute: RosarioMariaRosarioRoute,
+  RosarioMariaIndexRoute: RosarioMariaIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
