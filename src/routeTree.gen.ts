@@ -9,15 +9,41 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as CreditosRouteImport } from './routes/creditos'
+import { Route as AjustesRouteImport } from './routes/ajustes'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as RosarioMariaIndexRouteImport } from './routes/rosario-maria.index'
+import { Route as RosarioJoseIndexRouteImport } from './routes/rosario-jose.index'
+import { Route as CoronillaJoseIndexRouteImport } from './routes/coronilla-jose.index'
 import { Route as RosarioMariaRosarioRouteImport } from './routes/rosario-maria.rosario'
 import { Route as RosarioMariaOfrecimientoRouteImport } from './routes/rosario-maria.ofrecimiento'
 import { Route as RosarioMariaLetaniasRouteImport } from './routes/rosario-maria.letanias'
 import { Route as RosarioMariaInicialesRouteImport } from './routes/rosario-maria.iniciales'
 import { Route as RosarioMariaConclusionRouteImport } from './routes/rosario-maria.conclusion'
 import { Route as RosarioMariaAvesSalveRouteImport } from './routes/rosario-maria.aves-salve'
+import { Route as RosarioJoseRosarioRouteImport } from './routes/rosario-jose.rosario'
+import { Route as RosarioJoseOfrecimientoRouteImport } from './routes/rosario-jose.ofrecimiento'
+import { Route as RosarioJoseLetaniasRouteImport } from './routes/rosario-jose.letanias'
+import { Route as RosarioJoseInicialesRouteImport } from './routes/rosario-jose.iniciales'
+import { Route as RosarioJoseConclusionRouteImport } from './routes/rosario-jose.conclusion'
+import { Route as RosarioJoseAvesSalveRouteImport } from './routes/rosario-jose.aves-salve'
+import { Route as CoronillaJoseSalveJoseRouteImport } from './routes/coronilla-jose.salve-jose'
+import { Route as CoronillaJoseOfrecimientoRouteImport } from './routes/coronilla-jose.ofrecimiento'
+import { Route as CoronillaJoseLetaniasRouteImport } from './routes/coronilla-jose.letanias'
+import { Route as CoronillaJoseInicialesRouteImport } from './routes/coronilla-jose.iniciales'
+import { Route as CoronillaJoseCoronillaRouteImport } from './routes/coronilla-jose.coronilla'
+import { Route as CoronillaJoseConclusionRouteImport } from './routes/coronilla-jose.conclusion'
 
+const CreditosRoute = CreditosRouteImport.update({
+  id: '/creditos',
+  path: '/creditos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AjustesRoute = AjustesRouteImport.update({
+  id: '/ajustes',
+  path: '/ajustes',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -26,6 +52,16 @@ const IndexRoute = IndexRouteImport.update({
 const RosarioMariaIndexRoute = RosarioMariaIndexRouteImport.update({
   id: '/rosario-maria/',
   path: '/rosario-maria/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RosarioJoseIndexRoute = RosarioJoseIndexRouteImport.update({
+  id: '/rosario-jose/',
+  path: '/rosario-jose/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoronillaJoseIndexRoute = CoronillaJoseIndexRouteImport.update({
+  id: '/coronilla-jose/',
+  path: '/coronilla-jose/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RosarioMariaRosarioRoute = RosarioMariaRosarioRouteImport.update({
@@ -59,84 +95,271 @@ const RosarioMariaAvesSalveRoute = RosarioMariaAvesSalveRouteImport.update({
   path: '/rosario-maria/aves-salve',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RosarioJoseRosarioRoute = RosarioJoseRosarioRouteImport.update({
+  id: '/rosario-jose/rosario',
+  path: '/rosario-jose/rosario',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RosarioJoseOfrecimientoRoute = RosarioJoseOfrecimientoRouteImport.update({
+  id: '/rosario-jose/ofrecimiento',
+  path: '/rosario-jose/ofrecimiento',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RosarioJoseLetaniasRoute = RosarioJoseLetaniasRouteImport.update({
+  id: '/rosario-jose/letanias',
+  path: '/rosario-jose/letanias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RosarioJoseInicialesRoute = RosarioJoseInicialesRouteImport.update({
+  id: '/rosario-jose/iniciales',
+  path: '/rosario-jose/iniciales',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RosarioJoseConclusionRoute = RosarioJoseConclusionRouteImport.update({
+  id: '/rosario-jose/conclusion',
+  path: '/rosario-jose/conclusion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RosarioJoseAvesSalveRoute = RosarioJoseAvesSalveRouteImport.update({
+  id: '/rosario-jose/aves-salve',
+  path: '/rosario-jose/aves-salve',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoronillaJoseSalveJoseRoute = CoronillaJoseSalveJoseRouteImport.update({
+  id: '/coronilla-jose/salve-jose',
+  path: '/coronilla-jose/salve-jose',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoronillaJoseOfrecimientoRoute =
+  CoronillaJoseOfrecimientoRouteImport.update({
+    id: '/coronilla-jose/ofrecimiento',
+    path: '/coronilla-jose/ofrecimiento',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CoronillaJoseLetaniasRoute = CoronillaJoseLetaniasRouteImport.update({
+  id: '/coronilla-jose/letanias',
+  path: '/coronilla-jose/letanias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoronillaJoseInicialesRoute = CoronillaJoseInicialesRouteImport.update({
+  id: '/coronilla-jose/iniciales',
+  path: '/coronilla-jose/iniciales',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoronillaJoseCoronillaRoute = CoronillaJoseCoronillaRouteImport.update({
+  id: '/coronilla-jose/coronilla',
+  path: '/coronilla-jose/coronilla',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoronillaJoseConclusionRoute = CoronillaJoseConclusionRouteImport.update({
+  id: '/coronilla-jose/conclusion',
+  path: '/coronilla-jose/conclusion',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ajustes': typeof AjustesRoute
+  '/creditos': typeof CreditosRoute
+  '/coronilla-jose/conclusion': typeof CoronillaJoseConclusionRoute
+  '/coronilla-jose/coronilla': typeof CoronillaJoseCoronillaRoute
+  '/coronilla-jose/iniciales': typeof CoronillaJoseInicialesRoute
+  '/coronilla-jose/letanias': typeof CoronillaJoseLetaniasRoute
+  '/coronilla-jose/ofrecimiento': typeof CoronillaJoseOfrecimientoRoute
+  '/coronilla-jose/salve-jose': typeof CoronillaJoseSalveJoseRoute
+  '/rosario-jose/aves-salve': typeof RosarioJoseAvesSalveRoute
+  '/rosario-jose/conclusion': typeof RosarioJoseConclusionRoute
+  '/rosario-jose/iniciales': typeof RosarioJoseInicialesRoute
+  '/rosario-jose/letanias': typeof RosarioJoseLetaniasRoute
+  '/rosario-jose/ofrecimiento': typeof RosarioJoseOfrecimientoRoute
+  '/rosario-jose/rosario': typeof RosarioJoseRosarioRoute
   '/rosario-maria/aves-salve': typeof RosarioMariaAvesSalveRoute
   '/rosario-maria/conclusion': typeof RosarioMariaConclusionRoute
   '/rosario-maria/iniciales': typeof RosarioMariaInicialesRoute
   '/rosario-maria/letanias': typeof RosarioMariaLetaniasRoute
   '/rosario-maria/ofrecimiento': typeof RosarioMariaOfrecimientoRoute
   '/rosario-maria/rosario': typeof RosarioMariaRosarioRoute
+  '/coronilla-jose/': typeof CoronillaJoseIndexRoute
+  '/rosario-jose/': typeof RosarioJoseIndexRoute
   '/rosario-maria/': typeof RosarioMariaIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ajustes': typeof AjustesRoute
+  '/creditos': typeof CreditosRoute
+  '/coronilla-jose/conclusion': typeof CoronillaJoseConclusionRoute
+  '/coronilla-jose/coronilla': typeof CoronillaJoseCoronillaRoute
+  '/coronilla-jose/iniciales': typeof CoronillaJoseInicialesRoute
+  '/coronilla-jose/letanias': typeof CoronillaJoseLetaniasRoute
+  '/coronilla-jose/ofrecimiento': typeof CoronillaJoseOfrecimientoRoute
+  '/coronilla-jose/salve-jose': typeof CoronillaJoseSalveJoseRoute
+  '/rosario-jose/aves-salve': typeof RosarioJoseAvesSalveRoute
+  '/rosario-jose/conclusion': typeof RosarioJoseConclusionRoute
+  '/rosario-jose/iniciales': typeof RosarioJoseInicialesRoute
+  '/rosario-jose/letanias': typeof RosarioJoseLetaniasRoute
+  '/rosario-jose/ofrecimiento': typeof RosarioJoseOfrecimientoRoute
+  '/rosario-jose/rosario': typeof RosarioJoseRosarioRoute
   '/rosario-maria/aves-salve': typeof RosarioMariaAvesSalveRoute
   '/rosario-maria/conclusion': typeof RosarioMariaConclusionRoute
   '/rosario-maria/iniciales': typeof RosarioMariaInicialesRoute
   '/rosario-maria/letanias': typeof RosarioMariaLetaniasRoute
   '/rosario-maria/ofrecimiento': typeof RosarioMariaOfrecimientoRoute
   '/rosario-maria/rosario': typeof RosarioMariaRosarioRoute
+  '/coronilla-jose': typeof CoronillaJoseIndexRoute
+  '/rosario-jose': typeof RosarioJoseIndexRoute
   '/rosario-maria': typeof RosarioMariaIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ajustes': typeof AjustesRoute
+  '/creditos': typeof CreditosRoute
+  '/coronilla-jose/conclusion': typeof CoronillaJoseConclusionRoute
+  '/coronilla-jose/coronilla': typeof CoronillaJoseCoronillaRoute
+  '/coronilla-jose/iniciales': typeof CoronillaJoseInicialesRoute
+  '/coronilla-jose/letanias': typeof CoronillaJoseLetaniasRoute
+  '/coronilla-jose/ofrecimiento': typeof CoronillaJoseOfrecimientoRoute
+  '/coronilla-jose/salve-jose': typeof CoronillaJoseSalveJoseRoute
+  '/rosario-jose/aves-salve': typeof RosarioJoseAvesSalveRoute
+  '/rosario-jose/conclusion': typeof RosarioJoseConclusionRoute
+  '/rosario-jose/iniciales': typeof RosarioJoseInicialesRoute
+  '/rosario-jose/letanias': typeof RosarioJoseLetaniasRoute
+  '/rosario-jose/ofrecimiento': typeof RosarioJoseOfrecimientoRoute
+  '/rosario-jose/rosario': typeof RosarioJoseRosarioRoute
   '/rosario-maria/aves-salve': typeof RosarioMariaAvesSalveRoute
   '/rosario-maria/conclusion': typeof RosarioMariaConclusionRoute
   '/rosario-maria/iniciales': typeof RosarioMariaInicialesRoute
   '/rosario-maria/letanias': typeof RosarioMariaLetaniasRoute
   '/rosario-maria/ofrecimiento': typeof RosarioMariaOfrecimientoRoute
   '/rosario-maria/rosario': typeof RosarioMariaRosarioRoute
+  '/coronilla-jose/': typeof CoronillaJoseIndexRoute
+  '/rosario-jose/': typeof RosarioJoseIndexRoute
   '/rosario-maria/': typeof RosarioMariaIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/ajustes'
+    | '/creditos'
+    | '/coronilla-jose/conclusion'
+    | '/coronilla-jose/coronilla'
+    | '/coronilla-jose/iniciales'
+    | '/coronilla-jose/letanias'
+    | '/coronilla-jose/ofrecimiento'
+    | '/coronilla-jose/salve-jose'
+    | '/rosario-jose/aves-salve'
+    | '/rosario-jose/conclusion'
+    | '/rosario-jose/iniciales'
+    | '/rosario-jose/letanias'
+    | '/rosario-jose/ofrecimiento'
+    | '/rosario-jose/rosario'
     | '/rosario-maria/aves-salve'
     | '/rosario-maria/conclusion'
     | '/rosario-maria/iniciales'
     | '/rosario-maria/letanias'
     | '/rosario-maria/ofrecimiento'
     | '/rosario-maria/rosario'
+    | '/coronilla-jose/'
+    | '/rosario-jose/'
     | '/rosario-maria/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/ajustes'
+    | '/creditos'
+    | '/coronilla-jose/conclusion'
+    | '/coronilla-jose/coronilla'
+    | '/coronilla-jose/iniciales'
+    | '/coronilla-jose/letanias'
+    | '/coronilla-jose/ofrecimiento'
+    | '/coronilla-jose/salve-jose'
+    | '/rosario-jose/aves-salve'
+    | '/rosario-jose/conclusion'
+    | '/rosario-jose/iniciales'
+    | '/rosario-jose/letanias'
+    | '/rosario-jose/ofrecimiento'
+    | '/rosario-jose/rosario'
     | '/rosario-maria/aves-salve'
     | '/rosario-maria/conclusion'
     | '/rosario-maria/iniciales'
     | '/rosario-maria/letanias'
     | '/rosario-maria/ofrecimiento'
     | '/rosario-maria/rosario'
+    | '/coronilla-jose'
+    | '/rosario-jose'
     | '/rosario-maria'
   id:
     | '__root__'
     | '/'
+    | '/ajustes'
+    | '/creditos'
+    | '/coronilla-jose/conclusion'
+    | '/coronilla-jose/coronilla'
+    | '/coronilla-jose/iniciales'
+    | '/coronilla-jose/letanias'
+    | '/coronilla-jose/ofrecimiento'
+    | '/coronilla-jose/salve-jose'
+    | '/rosario-jose/aves-salve'
+    | '/rosario-jose/conclusion'
+    | '/rosario-jose/iniciales'
+    | '/rosario-jose/letanias'
+    | '/rosario-jose/ofrecimiento'
+    | '/rosario-jose/rosario'
     | '/rosario-maria/aves-salve'
     | '/rosario-maria/conclusion'
     | '/rosario-maria/iniciales'
     | '/rosario-maria/letanias'
     | '/rosario-maria/ofrecimiento'
     | '/rosario-maria/rosario'
+    | '/coronilla-jose/'
+    | '/rosario-jose/'
     | '/rosario-maria/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AjustesRoute: typeof AjustesRoute
+  CreditosRoute: typeof CreditosRoute
+  CoronillaJoseConclusionRoute: typeof CoronillaJoseConclusionRoute
+  CoronillaJoseCoronillaRoute: typeof CoronillaJoseCoronillaRoute
+  CoronillaJoseInicialesRoute: typeof CoronillaJoseInicialesRoute
+  CoronillaJoseLetaniasRoute: typeof CoronillaJoseLetaniasRoute
+  CoronillaJoseOfrecimientoRoute: typeof CoronillaJoseOfrecimientoRoute
+  CoronillaJoseSalveJoseRoute: typeof CoronillaJoseSalveJoseRoute
+  RosarioJoseAvesSalveRoute: typeof RosarioJoseAvesSalveRoute
+  RosarioJoseConclusionRoute: typeof RosarioJoseConclusionRoute
+  RosarioJoseInicialesRoute: typeof RosarioJoseInicialesRoute
+  RosarioJoseLetaniasRoute: typeof RosarioJoseLetaniasRoute
+  RosarioJoseOfrecimientoRoute: typeof RosarioJoseOfrecimientoRoute
+  RosarioJoseRosarioRoute: typeof RosarioJoseRosarioRoute
   RosarioMariaAvesSalveRoute: typeof RosarioMariaAvesSalveRoute
   RosarioMariaConclusionRoute: typeof RosarioMariaConclusionRoute
   RosarioMariaInicialesRoute: typeof RosarioMariaInicialesRoute
   RosarioMariaLetaniasRoute: typeof RosarioMariaLetaniasRoute
   RosarioMariaOfrecimientoRoute: typeof RosarioMariaOfrecimientoRoute
   RosarioMariaRosarioRoute: typeof RosarioMariaRosarioRoute
+  CoronillaJoseIndexRoute: typeof CoronillaJoseIndexRoute
+  RosarioJoseIndexRoute: typeof RosarioJoseIndexRoute
   RosarioMariaIndexRoute: typeof RosarioMariaIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/creditos': {
+      id: '/creditos'
+      path: '/creditos'
+      fullPath: '/creditos'
+      preLoaderRoute: typeof CreditosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ajustes': {
+      id: '/ajustes'
+      path: '/ajustes'
+      fullPath: '/ajustes'
+      preLoaderRoute: typeof AjustesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -149,6 +372,20 @@ declare module '@tanstack/react-router' {
       path: '/rosario-maria'
       fullPath: '/rosario-maria/'
       preLoaderRoute: typeof RosarioMariaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rosario-jose/': {
+      id: '/rosario-jose/'
+      path: '/rosario-jose'
+      fullPath: '/rosario-jose/'
+      preLoaderRoute: typeof RosarioJoseIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coronilla-jose/': {
+      id: '/coronilla-jose/'
+      path: '/coronilla-jose'
+      fullPath: '/coronilla-jose/'
+      preLoaderRoute: typeof CoronillaJoseIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/rosario-maria/rosario': {
@@ -193,17 +430,117 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RosarioMariaAvesSalveRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rosario-jose/rosario': {
+      id: '/rosario-jose/rosario'
+      path: '/rosario-jose/rosario'
+      fullPath: '/rosario-jose/rosario'
+      preLoaderRoute: typeof RosarioJoseRosarioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rosario-jose/ofrecimiento': {
+      id: '/rosario-jose/ofrecimiento'
+      path: '/rosario-jose/ofrecimiento'
+      fullPath: '/rosario-jose/ofrecimiento'
+      preLoaderRoute: typeof RosarioJoseOfrecimientoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rosario-jose/letanias': {
+      id: '/rosario-jose/letanias'
+      path: '/rosario-jose/letanias'
+      fullPath: '/rosario-jose/letanias'
+      preLoaderRoute: typeof RosarioJoseLetaniasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rosario-jose/iniciales': {
+      id: '/rosario-jose/iniciales'
+      path: '/rosario-jose/iniciales'
+      fullPath: '/rosario-jose/iniciales'
+      preLoaderRoute: typeof RosarioJoseInicialesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rosario-jose/conclusion': {
+      id: '/rosario-jose/conclusion'
+      path: '/rosario-jose/conclusion'
+      fullPath: '/rosario-jose/conclusion'
+      preLoaderRoute: typeof RosarioJoseConclusionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rosario-jose/aves-salve': {
+      id: '/rosario-jose/aves-salve'
+      path: '/rosario-jose/aves-salve'
+      fullPath: '/rosario-jose/aves-salve'
+      preLoaderRoute: typeof RosarioJoseAvesSalveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coronilla-jose/salve-jose': {
+      id: '/coronilla-jose/salve-jose'
+      path: '/coronilla-jose/salve-jose'
+      fullPath: '/coronilla-jose/salve-jose'
+      preLoaderRoute: typeof CoronillaJoseSalveJoseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coronilla-jose/ofrecimiento': {
+      id: '/coronilla-jose/ofrecimiento'
+      path: '/coronilla-jose/ofrecimiento'
+      fullPath: '/coronilla-jose/ofrecimiento'
+      preLoaderRoute: typeof CoronillaJoseOfrecimientoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coronilla-jose/letanias': {
+      id: '/coronilla-jose/letanias'
+      path: '/coronilla-jose/letanias'
+      fullPath: '/coronilla-jose/letanias'
+      preLoaderRoute: typeof CoronillaJoseLetaniasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coronilla-jose/iniciales': {
+      id: '/coronilla-jose/iniciales'
+      path: '/coronilla-jose/iniciales'
+      fullPath: '/coronilla-jose/iniciales'
+      preLoaderRoute: typeof CoronillaJoseInicialesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coronilla-jose/coronilla': {
+      id: '/coronilla-jose/coronilla'
+      path: '/coronilla-jose/coronilla'
+      fullPath: '/coronilla-jose/coronilla'
+      preLoaderRoute: typeof CoronillaJoseCoronillaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coronilla-jose/conclusion': {
+      id: '/coronilla-jose/conclusion'
+      path: '/coronilla-jose/conclusion'
+      fullPath: '/coronilla-jose/conclusion'
+      preLoaderRoute: typeof CoronillaJoseConclusionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AjustesRoute: AjustesRoute,
+  CreditosRoute: CreditosRoute,
+  CoronillaJoseConclusionRoute: CoronillaJoseConclusionRoute,
+  CoronillaJoseCoronillaRoute: CoronillaJoseCoronillaRoute,
+  CoronillaJoseInicialesRoute: CoronillaJoseInicialesRoute,
+  CoronillaJoseLetaniasRoute: CoronillaJoseLetaniasRoute,
+  CoronillaJoseOfrecimientoRoute: CoronillaJoseOfrecimientoRoute,
+  CoronillaJoseSalveJoseRoute: CoronillaJoseSalveJoseRoute,
+  RosarioJoseAvesSalveRoute: RosarioJoseAvesSalveRoute,
+  RosarioJoseConclusionRoute: RosarioJoseConclusionRoute,
+  RosarioJoseInicialesRoute: RosarioJoseInicialesRoute,
+  RosarioJoseLetaniasRoute: RosarioJoseLetaniasRoute,
+  RosarioJoseOfrecimientoRoute: RosarioJoseOfrecimientoRoute,
+  RosarioJoseRosarioRoute: RosarioJoseRosarioRoute,
   RosarioMariaAvesSalveRoute: RosarioMariaAvesSalveRoute,
   RosarioMariaConclusionRoute: RosarioMariaConclusionRoute,
   RosarioMariaInicialesRoute: RosarioMariaInicialesRoute,
   RosarioMariaLetaniasRoute: RosarioMariaLetaniasRoute,
   RosarioMariaOfrecimientoRoute: RosarioMariaOfrecimientoRoute,
   RosarioMariaRosarioRoute: RosarioMariaRosarioRoute,
+  CoronillaJoseIndexRoute: CoronillaJoseIndexRoute,
+  RosarioJoseIndexRoute: RosarioJoseIndexRoute,
   RosarioMariaIndexRoute: RosarioMariaIndexRoute,
 }
 export const routeTree = rootRouteImport
