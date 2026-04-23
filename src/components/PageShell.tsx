@@ -28,6 +28,8 @@ interface PageShellProps {
   children: ReactNode;
   /** Sticky slot rendered right under the header (used by Rezo counter) */
   sticky?: ReactNode;
+  /** Extra action rendered under the Inicio button (e.g. Misterios) */
+  headerExtra?: ReactNode;
 }
 
 export function PageShell({
@@ -38,12 +40,13 @@ export function PageShell({
   backLabel = "Regresar",
   children,
   sticky,
+  headerExtra,
 }: PageShellProps) {
   return (
     <div className={cn("min-h-screen bg-background flex justify-center", themeClass[theme])}>
       <div className="w-full max-w-xl flex flex-col">
         <header className={cn("sticky top-0 z-30 px-4 pt-4 pb-5 shadow-md", headerBg[theme])}>
-          <div className="flex items-center justify-between gap-2 mb-3">
+          <div className="flex items-start justify-between gap-2 mb-3">
             {backTo ? (
               <Link
                 to={backTo}
@@ -55,13 +58,16 @@ export function PageShell({
             ) : (
               <span />
             )}
-            <Link
-              to="/"
-              className="inline-flex items-center gap-1.5 rounded-full bg-black/10 hover:bg-black/20 backdrop-blur px-3 py-1.5 text-sm font-medium transition"
-            >
-              <Home className="size-4" />
-              Inicio
-            </Link>
+            <div className="flex flex-col items-end gap-2">
+              <Link
+                to="/"
+                className="inline-flex items-center gap-1.5 rounded-full bg-black/10 hover:bg-black/20 backdrop-blur px-3 py-1.5 text-sm font-medium transition"
+              >
+                <Home className="size-4" />
+                Inicio
+              </Link>
+              {headerExtra}
+            </div>
           </div>
           <h1 className="text-2xl font-semibold leading-tight">{title}</h1>
           {subtitle && <p className="text-sm opacity-90 mt-1">{subtitle}</p>}

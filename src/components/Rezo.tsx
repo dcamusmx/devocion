@@ -91,7 +91,7 @@ export function Rezo({
     <div className="space-y-5">
       <div className="-mx-4 px-4 py-3 sticky top-0 z-10 bg-background/95 backdrop-blur border-b">
         <div className="flex items-center justify-between gap-3">
-          <div className="text-sm">
+          <div className="text-base sm:text-lg">
             <span className="font-semibold">
               {itemLabel} {current.numero}/{items.length}
             </span>
@@ -104,7 +104,7 @@ export function Rezo({
           </div>
           <button
             onClick={reset}
-            className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-medium border hover:bg-accent transition"
+            className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-medium border hover:bg-accent transition shrink-0"
             aria-label="Reiniciar"
           >
             <RotateCcw className="size-3.5" />

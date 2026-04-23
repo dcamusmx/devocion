@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { Rezo } from "@/components/Rezo";
 import { VIRTUDES_SAN_JOSE } from "@/data/virtudes";
-import { AVE_JOSE } from "@/data/common";
 
 export const Route = createFileRoute("/coronilla-jose/coronilla")({
   component: Page,
@@ -18,12 +17,6 @@ function Page() {
         itemLabel="Virtud"
         continueTo="/coronilla-jose/ofrecimiento"
       />
-      <section className="mt-6 rounded-2xl border bg-card p-5 shadow-sm">
-        <h3 className="text-sm uppercase tracking-wider text-primary font-semibold mb-1.5">
-          Ave José (siempre visible)
-        </h3>
-        <p className="leading-relaxed">{AVE_JOSE}</p>
-      </section>
     </PageShell>
   );
 }
