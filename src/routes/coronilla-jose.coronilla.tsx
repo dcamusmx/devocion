@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { Rezo } from "@/components/Rezo";
 import { VIRTUDES_SAN_JOSE } from "@/data/virtudes";
-import { AVE_JOSE } from "@/data/common";
 
 export const Route = createFileRoute("/coronilla-jose/coronilla")({
   component: Page,
