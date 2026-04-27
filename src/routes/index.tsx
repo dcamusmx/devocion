@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Heart, Cross, Flame, Settings as SettingsIcon, Info } from "lucide-react";
+import { Heart, Cross, Flame, Settings as SettingsIcon, Info, LogOut } from "lucide-react";
 import { ProgresoPendiente } from "@/components/ProgresoPendiente";
 
 export const Route = createFileRoute("/")({
@@ -110,6 +110,24 @@ function HomePage() {
               ))}
             </ul>
           </section>
+
+          <div className="pt-4 pb-2 flex justify-center">
+            <button
+              type="button"
+              onClick={() => {
+                if (typeof window === "undefined") return;
+                window.close();
+                // Fallback if window.close() is blocked
+                setTimeout(() => {
+                  window.location.href = "about:blank";
+                }, 100);
+              }}
+              className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition px-3 py-1.5 rounded-full"
+            >
+              <LogOut className="size-3.5" />
+              Salir
+            </button>
+          </div>
         </main>
       </div>
     </div>
