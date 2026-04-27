@@ -11,11 +11,12 @@ interface SectionItem {
   icon?: ReactNode;
 }
 
-export function SectionList({ items, theme }: { items: SectionItem[]; theme: "maria" | "jose" | "coronilla" }) {
+export function SectionList({ items, theme }: { items: SectionItem[]; theme: "maria" | "jose" | "coronilla" | "espiritu" }) {
   const ring = {
     maria: "bg-maria text-maria-foreground",
     jose: "bg-jose text-jose-foreground",
     coronilla: "bg-coronilla text-coronilla-foreground",
+    espiritu: "bg-espiritu text-espiritu-foreground",
   }[theme];
 
   return (

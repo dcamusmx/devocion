@@ -3,12 +3,13 @@ import { ArrowLeft, Home } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
-export type ThemeName = "maria" | "jose" | "coronilla" | "neutral";
+export type ThemeName = "maria" | "jose" | "coronilla" | "espiritu" | "neutral";
 
 const themeClass: Record<ThemeName, string> = {
   maria: "theme-maria",
   jose: "theme-jose",
   coronilla: "theme-coronilla",
+  espiritu: "theme-espiritu",
   neutral: "",
 };
 
@@ -16,6 +17,7 @@ const headerBg: Record<ThemeName, string> = {
   maria: "bg-maria text-maria-foreground",
   jose: "bg-jose text-jose-foreground",
   coronilla: "bg-coronilla text-coronilla-foreground",
+  espiritu: "bg-espiritu text-espiritu-foreground",
   neutral: "bg-primary text-primary-foreground",
 };
 
