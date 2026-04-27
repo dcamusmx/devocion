@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Heart, Cross, Flame, Settings as SettingsIcon, Info, LogOut } from "lucide-react";
+import { Heart, Cross, Flame, Settings as SettingsIcon, Info, LogOut, Sparkles } from "lucide-react";
 import { ProgresoPendiente } from "@/components/ProgresoPendiente";
 
 export const Route = createFileRoute("/")({
@@ -35,6 +35,13 @@ const cards = [
     desc: "Oraciones, misterios y letanías",
     theme: "jose" as const,
     Icon: Cross,
+  },
+  {
+    to: "/rosario-espiritu",
+    title: "Rosario al Espíritu Santo",
+    desc: "Siete misterios y siete dones",
+    theme: "espiritu" as const,
+    Icon: Sparkles,
   },
   {
     to: "/coronilla-jose",
