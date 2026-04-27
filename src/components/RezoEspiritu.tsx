@@ -145,16 +145,15 @@ export function RezoEspiritu({ continueTo }: { continueTo: string }) {
                 <div className="flex items-center gap-1.5 flex-1 justify-center flex-wrap">
                   {Array.from({ length: 7 }, (_, i) => {
                     const idx = i + 1;
-                    const filled = isPastRow || (isActiveRow && (step > idx || step === STEPS_PER_ITEM - 1 || step === 7 ? true : step >= idx + 1));
                     const active = isActiveRow && step === idx;
+                    const filled =
+                      isPastRow ||
+                      (isActiveRow && (step > idx || step >= 7));
                     return (
                       <Bead
                         key={i}
                         active={active}
-                        filled={
-                          isPastRow ||
-                          (isActiveRow && (step > idx || step >= 7))
-                        }
+                        filled={filled}
                         dim={!isActiveRow && !isPastRow}
                       />
                     );
