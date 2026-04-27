@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Heart, Cross, Flame, Settings as SettingsIcon, Info } from "lucide-react";
+import { ProgresoPendiente } from "@/components/ProgresoPendiente";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -63,6 +64,7 @@ function HomePage() {
         </header>
 
         <main className="px-4 -mt-6 pb-10 space-y-6">
+          <ProgresoPendiente />
           <section>
             <h2 className="sr-only">Devociones</h2>
             <ul className="space-y-3">
