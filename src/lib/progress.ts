@@ -1,4 +1,8 @@
-export type RezoVariant = "rosario-maria" | "rosario-jose" | "coronilla-jose";
+export type RezoVariant =
+  | "rosario-maria"
+  | "rosario-jose"
+  | "coronilla-jose"
+  | "rosario-espiritu";
 
 export interface RezoProgress {
   variant: RezoVariant;
@@ -6,6 +10,8 @@ export interface RezoProgress {
   step: number;
   totalItems: number;
   updatedAt: number;
+  /** Steps per item (defaults to 12 for older variants) */
+  stepsPerItem?: number;
 }
 
 const KEY = "devocional.progress.v1";
@@ -28,6 +34,11 @@ export const VARIANT_META: Record<
     label: "Coronilla a San José",
     route: "/coronilla-jose/coronilla",
     itemLabel: "Virtud",
+  },
+  "rosario-espiritu": {
+    label: "Rosario al Espíritu Santo",
+    route: "/rosario-espiritu/rosario",
+    itemLabel: "Misterio",
   },
 };
 
