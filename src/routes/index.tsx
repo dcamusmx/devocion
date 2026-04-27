@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Heart, Cross, Flame, Settings as SettingsIcon, Info } from "lucide-react";
+import { ProgresoPendiente } from "@/components/ProgresoPendiente";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
