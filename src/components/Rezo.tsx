@@ -42,6 +42,39 @@ export function Rezo({
   const { playBeep, vibrate } = useSettings();
   const [itemIdx, setItemIdx] = useState(0);
   const [step, setStep] = useState(0);
+  const hydrated = useRef(false);
+
+  // Restore progress on mount
+  useEffect(() => {
+    const saved = loadProgress(variant);
+    if (saved && saved.totalItems === items.length) {
+      setItemIdx(Math.min(saved.itemIdx, items.length - 1));
+      setStep(Math.min(saved.step, STEPS_PER_ITEM - 1));
+    }
+    hydrated.current = true;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Persist progress
+  useEffect(() => {
+    if (!hydrated.current) return;
+    const isFinished = itemIdx === items.length - 1 && step === STEPS_PER_ITEM - 1;
+    if (isFinished) {
+      clearProgress(variant);
+      return;
+    }
+    if (itemIdx === 0 && step === 0) {
+      clearProgress(variant);
+      return;
+    }
+    saveProgress({
+      variant,
+      itemIdx,
+      step,
+      totalItems: items.length,
+      updatedAt: Date.now(),
+    });
+  }, [itemIdx, step, variant, items.length]);
 
   const isCoronilla = variant === "coronilla-jose";
   const aveText = isCoronilla ? AVE_JOSE : AVE_MARIA;
