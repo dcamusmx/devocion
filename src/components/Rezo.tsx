@@ -1,8 +1,9 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { useSettings } from "@/lib/settings";
 import { cn } from "@/lib/utils";
+import { clearProgress, loadProgress, saveProgress } from "@/lib/progress";
 import {
   PADRE_NUESTRO,
   AVE_MARIA,
