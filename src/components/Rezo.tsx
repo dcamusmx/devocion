@@ -156,9 +156,8 @@ export function Rezo({
       </section>
 
       <section className="rounded-2xl border bg-card p-5 shadow-sm">
-        <div className="flex items-center gap-3 flex-wrap justify-center">
+        <div className="flex items-center gap-2 flex-wrap justify-center">
           <Bead big active={step === 0} filled={step >= 1} />
-          <span className="text-muted-foreground">—</span>
           <div className="flex items-center gap-1.5 flex-wrap justify-center">
             {Array.from({ length: 10 }, (_, i) => {
               const idx = i + 1;
@@ -268,7 +267,7 @@ function Bead({
     <span
       className={cn(
         "inline-block rounded-full transition-all duration-200 border",
-        big ? "size-7" : "size-4",
+        big ? "size-6" : "size-4",
         filled ? "bg-primary border-primary" : "bg-[var(--bead-empty)] border-transparent",
         active && "ring-4 ring-primary/30 scale-110 shadow"
       )}

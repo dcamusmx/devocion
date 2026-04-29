@@ -120,48 +120,20 @@ export function RezoEspiritu({ continueTo }: { continueTo: string }) {
         </p>
       </section>
 
-      {/* Tablero de cuentas: 7 líneas × 7 cuentas. Solo la línea actual está activa. */}
+      {/* Tablero de cuentas: solo la línea del misterio activo */}
       <section className="rounded-2xl border bg-card p-4 shadow-sm">
-        <div className="space-y-2">
-          {Array.from({ length: TOTAL }, (_, row) => {
-            const isActiveRow = row === itemIdx;
-            const isPastRow = row < itemIdx;
-            return (
-              <div
-                key={row}
-                className={cn(
-                  "flex items-center gap-2 justify-between rounded-lg px-2 py-1.5 transition",
-                  isActiveRow && "bg-primary/5 ring-1 ring-primary/20"
-                )}
-              >
-                <span
-                  className={cn(
-                    "text-xs font-semibold w-5 text-center shrink-0",
-                    isActiveRow ? "text-primary" : "text-muted-foreground"
-                  )}
-                >
-                  {row + 1}
-                </span>
-                <div className="flex items-center gap-1.5 flex-1 justify-center flex-wrap">
-                  {Array.from({ length: 7 }, (_, i) => {
-                    const idx = i + 1;
-                    const active = isActiveRow && step === idx;
-                    const filled =
-                      isPastRow ||
-                      (isActiveRow && (step > idx || step >= 7));
-                    return (
-                      <Bead
-                        key={i}
-                        active={active}
-                        filled={filled}
-                        dim={!isActiveRow && !isPastRow}
-                      />
-                    );
-                  })}
-                </div>
-              </div>
-            );
-          })}
+        <div className="flex items-center gap-2 justify-between rounded-lg px-2 py-1.5 bg-primary/5 ring-1 ring-primary/20">
+          <span className="text-xs font-semibold w-5 text-center shrink-0 text-primary">
+            {itemIdx + 1}
+          </span>
+          <div className="flex items-center gap-1.5 flex-1 justify-center flex-wrap">
+            {Array.from({ length: 7 }, (_, i) => {
+              const idx = i + 1;
+              const active = step === idx;
+              const filled = step > idx || step >= 7;
+              return <Bead key={i} active={active} filled={filled} />;
+            })}
+          </div>
         </div>
         <div className="mt-3 text-center text-xs text-muted-foreground">
           7 misterios · 7 oraciones por misterio
