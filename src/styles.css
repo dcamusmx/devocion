@@ -139,6 +139,7 @@
 :root[data-font="s"] { font-size: 15px; }
 :root[data-font="m"] { font-size: 17px; }
 :root[data-font="l"] { font-size: 19px; }
+:root[data-font="xl"] { font-size: 22px; }
 
 @layer base {
   * {
