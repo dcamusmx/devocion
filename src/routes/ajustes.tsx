@@ -97,7 +97,10 @@ function SegmentedGroup<T extends string>({
   onChange: (v: T) => void;
 }) {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 p-1 rounded-xl bg-muted">
+    <div
+      className="grid gap-2 p-1 rounded-xl bg-muted"
+      style={{ gridTemplateColumns: `repeat(${options.length}, minmax(0, 1fr))` }}
+    >
       {options.map((opt) => (
         <button
           key={opt.value}
