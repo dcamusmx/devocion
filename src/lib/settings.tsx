@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 
-export type FontSize = "s" | "m" | "l";
+export type FontSize = "s" | "m" | "l" | "xl";
 export type Theme = "light" | "dark";
 
 export interface Settings {
