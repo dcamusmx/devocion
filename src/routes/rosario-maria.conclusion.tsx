@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { PrayerCard } from "@/components/Prayer";
 import { Button } from "@/components/ui/button";
+import { DescargarPdfButton } from "@/components/DescargarPdfButton";
 import { CONCLUSION_MARIA } from "@/data/conclusiones";
 import { CIERRE_AVE_MARIA_PURISIMA } from "@/data/common";
 import { Home } from "lucide-react";
@@ -27,7 +28,9 @@ function Page() {
             </Link>
           </Button>
         </div>
+        <DescargarPdfButton variant="maria" />
       </div>
     </PageShell>
   );
 }
+
