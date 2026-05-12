@@ -60,7 +60,8 @@ export function PageShell({
             ) : (
               <span />
             )}
-            <div className="flex flex-col items-end gap-2">
+            <div className="flex items-center gap-2">
+              {headerExtra}
               <Link
                 to="/"
                 className="inline-flex items-center gap-1.5 rounded-full bg-black/10 hover:bg-black/20 backdrop-blur px-3 py-1.5 text-sm font-medium transition"
@@ -68,7 +69,6 @@ export function PageShell({
                 <Home className="size-4" />
                 Inicio
               </Link>
-              {headerExtra}
             </div>
           </div>
           <h1 className="text-2xl font-semibold leading-tight">{title}</h1>
