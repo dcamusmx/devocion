@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useSettings } from "@/lib/settings";
 import { cn } from "@/lib/utils";
 import { clearProgress, loadProgress, saveProgress } from "@/lib/progress";
+import { MeditacionDialog } from "@/components/MeditacionDialog";
 import {
   PADRE_NUESTRO,
   AVE_MARIA,
@@ -148,10 +149,17 @@ export function Rezo({
       </div>
 
       <section className="rounded-2xl border bg-card p-5 shadow-sm">
-        <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
-          {itemLabel}
+        <div className="flex items-start justify-between gap-2">
+          <div className="min-w-0">
+            <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
+              {itemLabel}
+            </div>
+            <h2 className="text-xl font-semibold text-primary leading-snug">{current.titulo}</h2>
+          </div>
+          {variant !== "coronilla-jose" && (
+            <MeditacionDialog misterio={current} itemLabel={itemLabel} />
+          )}
         </div>
-        <h2 className="text-xl font-semibold text-primary leading-snug">{current.titulo}</h2>
         <p className="mt-2 text-foreground leading-relaxed">{current.descripcion}</p>
       </section>
 
