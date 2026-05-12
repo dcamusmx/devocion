@@ -33,6 +33,7 @@ function Page() {
               { value: "s", label: "Pequeña" },
               { value: "m", label: "Media" },
               { value: "l", label: "Grande" },
+              { value: "xl", label: "Extragrande" },
             ]}
             onChange={(v) => update("fontSize", v as FontSize)}
           />
@@ -96,7 +97,7 @@ function SegmentedGroup<T extends string>({
   onChange: (v: T) => void;
 }) {
   return (
-    <div className="grid grid-cols-3 gap-2 p-1 rounded-xl bg-muted">
+    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 p-1 rounded-xl bg-muted">
       {options.map((opt) => (
         <button
           key={opt.value}
