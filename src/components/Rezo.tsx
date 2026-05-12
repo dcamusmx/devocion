@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useSettings } from "@/lib/settings";
 import { cn } from "@/lib/utils";
 import { clearProgress, loadProgress, saveProgress } from "@/lib/progress";
+import { MeditacionDialog } from "@/components/MeditacionDialog";
 import {
   PADRE_NUESTRO,
   AVE_MARIA,
