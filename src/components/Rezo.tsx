@@ -148,10 +148,17 @@ export function Rezo({
       </div>
 
       <section className="rounded-2xl border bg-card p-5 shadow-sm">
-        <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
-          {itemLabel}
+        <div className="flex items-start justify-between gap-2">
+          <div className="min-w-0">
+            <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
+              {itemLabel}
+            </div>
+            <h2 className="text-xl font-semibold text-primary leading-snug">{current.titulo}</h2>
+          </div>
+          {variant !== "coronilla-jose" && (
+            <MeditacionDialog misterio={current} itemLabel={itemLabel} />
+          )}
         </div>
-        <h2 className="text-xl font-semibold text-primary leading-snug">{current.titulo}</h2>
         <p className="mt-2 text-foreground leading-relaxed">{current.descripcion}</p>
       </section>
 
