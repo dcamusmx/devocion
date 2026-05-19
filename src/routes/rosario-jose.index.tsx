@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { SectionList } from "@/components/SectionList";
+import { DescargarPdfButton } from "@/components/DescargarPdfButton";
 
 export const Route = createFileRoute("/rosario-jose/")({
   component: Page,
@@ -21,6 +22,9 @@ function Page() {
           { to: "/rosario-jose/conclusion", number: 6, title: "Conclusión" },
         ]}
       />
+      <div className="pt-4">
+        <DescargarPdfButton variant="jose" />
+      </div>
     </PageShell>
   );
 }
