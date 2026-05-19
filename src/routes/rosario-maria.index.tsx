@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { SectionList } from "@/components/SectionList";
+import { DescargarPdfButton } from "@/components/DescargarPdfButton";
 import { grupoDelDia, NOMBRE_DIAS } from "@/data/misterios";
 
 export const Route = createFileRoute("/rosario-maria/")({
@@ -30,6 +31,9 @@ function RosarioMariaIndex() {
           { to: "/rosario-maria/conclusion", number: 6, title: "Conclusión" },
         ]}
       />
+      <div className="pt-4">
+        <DescargarPdfButton variant="maria" />
+      </div>
     </PageShell>
   );
 }
