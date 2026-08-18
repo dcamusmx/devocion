@@ -33,6 +33,12 @@ export function PwaRegister() {
     const onLoad = () => {
       navigator.serviceWorker
         .register("/sw.js", { scope: "/" })
+        .then((registration) => {
+          registration.update();
+          if (navigator.serviceWorker.controller) {
+            navigator.serviceWorker.controller.postMessage({ type: "PREFETCH_ROUTES" });
+          }
+        })
         .catch(() => undefined);
     };
     if (document.readyState === "complete") onLoad();

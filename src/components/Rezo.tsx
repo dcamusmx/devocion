@@ -24,7 +24,7 @@ export interface RezoItem {
 }
 
 interface RezoProps {
-  variant: "rosario-maria" | "rosario-jose" | "coronilla-jose";
+  variant: "rosario-maria" | "rosario-jose" | "rosario-familias" | "coronilla-jose";
   items: RezoItem[];
   itemLabel: string;
   continueTo: string;
@@ -125,21 +125,21 @@ export function Rezo({
   return (
     <div className="space-y-5">
       <div className="-mx-4 px-4 py-3 sticky top-0 z-10 bg-background/95 backdrop-blur border-b">
-        <div className="flex items-center justify-between gap-3">
-          <div className="text-base sm:text-lg">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm sm:text-base leading-relaxed">
             <span className="font-semibold">
               {itemLabel} {current.numero}/{items.length}
             </span>
-            <span className="mx-2 text-muted-foreground">·</span>
+            <span className="text-muted-foreground">·</span>
             <span>
               Avemarías: <strong>{aveCount}</strong> de 10
             </span>
-            <span className="mx-2 text-muted-foreground">·</span>
+            <span className="text-muted-foreground">·</span>
             <span className="text-muted-foreground">Faltan: {faltan}</span>
           </div>
           <button
             onClick={reset}
-            className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-medium border hover:bg-accent transition shrink-0"
+            className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-medium border hover:bg-accent transition shrink-0 self-start"
             aria-label="Reiniciar"
           >
             <RotateCcw className="size-3.5" />
@@ -201,7 +201,7 @@ export function Rezo({
             </div>
             <p className="leading-relaxed">{GLORIA}</p>
           </div>
-          {variant === "rosario-maria" && (
+          {(variant === "rosario-maria" || variant === "rosario-familias") && (
             <>
               <p className="leading-relaxed">{MARIA_MADRE_GRACIA}</p>
               <p className="leading-relaxed">{OH_JESUS_MIO}</p>

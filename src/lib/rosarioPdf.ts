@@ -22,7 +22,7 @@ import {
 } from "@/data/letanias";
 import { CONCLUSION_MARIA, CONCLUSION_JOSE, SALVE_JOSE } from "@/data/conclusiones";
 
-type Variant = "maria" | "jose";
+type Variant = "maria" | "jose" | "familias";
 
 interface Block {
   kind: "h1" | "h2" | "p" | "small" | "spacer" | "rule";

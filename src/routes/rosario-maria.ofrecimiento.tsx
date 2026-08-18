@@ -5,12 +5,12 @@ import { PADRE_NUESTRO } from "@/data/common";
 
 export const Route = createFileRoute("/rosario-maria/ofrecimiento")({
   component: Page,
-  head: () => ({ meta: [{ title: "Ofrecimiento — Rosario a María" }] }),
+  head: () => ({ meta: [{ title: "Ofrecimiento — Rosario a Santa María" }] }),
 });
 
 function Page() {
   return (
-    <PageShell theme="maria" title="Ofrecimiento" subtitle="Rosario a María · 3 de 6" backTo="/rosario-maria">
+    <PageShell theme="maria" title="Ofrecimiento" subtitle="Rosario a Santa María · 3 de 6" backTo="/rosario-maria">
       <div className="space-y-4">
         <PrayerCard>
           <em>Ofrece tus intenciones personales o de grupo.</em>

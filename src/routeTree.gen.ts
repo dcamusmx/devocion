@@ -14,6 +14,7 @@ import { Route as AjustesRouteImport } from './routes/ajustes'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as RosarioMariaIndexRouteImport } from './routes/rosario-maria.index'
 import { Route as RosarioJoseIndexRouteImport } from './routes/rosario-jose.index'
+import { Route as RosarioFamiliasIndexRouteImport } from './routes/rosario-familias.index'
 import { Route as RosarioEspirituIndexRouteImport } from './routes/rosario-espiritu.index'
 import { Route as CoronillaJoseIndexRouteImport } from './routes/coronilla-jose.index'
 import { Route as RosarioMariaRosarioRouteImport } from './routes/rosario-maria.rosario'
@@ -28,6 +29,12 @@ import { Route as RosarioJoseLetaniasRouteImport } from './routes/rosario-jose.l
 import { Route as RosarioJoseInicialesRouteImport } from './routes/rosario-jose.iniciales'
 import { Route as RosarioJoseConclusionRouteImport } from './routes/rosario-jose.conclusion'
 import { Route as RosarioJoseAvesSalveRouteImport } from './routes/rosario-jose.aves-salve'
+import { Route as RosarioFamiliasRosarioRouteImport } from './routes/rosario-familias.rosario'
+import { Route as RosarioFamiliasOfrecimientoRouteImport } from './routes/rosario-familias.ofrecimiento'
+import { Route as RosarioFamiliasLetaniasRouteImport } from './routes/rosario-familias.letanias'
+import { Route as RosarioFamiliasInicialesRouteImport } from './routes/rosario-familias.iniciales'
+import { Route as RosarioFamiliasConclusionRouteImport } from './routes/rosario-familias.conclusion'
+import { Route as RosarioFamiliasAvesSalveRouteImport } from './routes/rosario-familias.aves-salve'
 import { Route as RosarioEspirituRosarioRouteImport } from './routes/rosario-espiritu.rosario'
 import { Route as RosarioEspirituOfrecimientoRouteImport } from './routes/rosario-espiritu.ofrecimiento'
 import { Route as RosarioEspirituLetaniasRouteImport } from './routes/rosario-espiritu.letanias'
@@ -63,6 +70,11 @@ const RosarioMariaIndexRoute = RosarioMariaIndexRouteImport.update({
 const RosarioJoseIndexRoute = RosarioJoseIndexRouteImport.update({
   id: '/rosario-jose/',
   path: '/rosario-jose/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RosarioFamiliasIndexRoute = RosarioFamiliasIndexRouteImport.update({
+  id: '/rosario-familias/',
+  path: '/rosario-familias/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RosarioEspirituIndexRoute = RosarioEspirituIndexRouteImport.update({
@@ -136,6 +148,40 @@ const RosarioJoseAvesSalveRoute = RosarioJoseAvesSalveRouteImport.update({
   path: '/rosario-jose/aves-salve',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RosarioFamiliasRosarioRoute = RosarioFamiliasRosarioRouteImport.update({
+  id: '/rosario-familias/rosario',
+  path: '/rosario-familias/rosario',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RosarioFamiliasOfrecimientoRoute =
+  RosarioFamiliasOfrecimientoRouteImport.update({
+    id: '/rosario-familias/ofrecimiento',
+    path: '/rosario-familias/ofrecimiento',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const RosarioFamiliasLetaniasRoute = RosarioFamiliasLetaniasRouteImport.update({
+  id: '/rosario-familias/letanias',
+  path: '/rosario-familias/letanias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RosarioFamiliasInicialesRoute =
+  RosarioFamiliasInicialesRouteImport.update({
+    id: '/rosario-familias/iniciales',
+    path: '/rosario-familias/iniciales',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const RosarioFamiliasConclusionRoute =
+  RosarioFamiliasConclusionRouteImport.update({
+    id: '/rosario-familias/conclusion',
+    path: '/rosario-familias/conclusion',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const RosarioFamiliasAvesSalveRoute =
+  RosarioFamiliasAvesSalveRouteImport.update({
+    id: '/rosario-familias/aves-salve',
+    path: '/rosario-familias/aves-salve',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const RosarioEspirituRosarioRoute = RosarioEspirituRosarioRouteImport.update({
   id: '/rosario-espiritu/rosario',
   path: '/rosario-espiritu/rosario',
@@ -211,6 +257,12 @@ export interface FileRoutesByFullPath {
   '/rosario-espiritu/letanias': typeof RosarioEspirituLetaniasRoute
   '/rosario-espiritu/ofrecimiento': typeof RosarioEspirituOfrecimientoRoute
   '/rosario-espiritu/rosario': typeof RosarioEspirituRosarioRoute
+  '/rosario-familias/aves-salve': typeof RosarioFamiliasAvesSalveRoute
+  '/rosario-familias/conclusion': typeof RosarioFamiliasConclusionRoute
+  '/rosario-familias/iniciales': typeof RosarioFamiliasInicialesRoute
+  '/rosario-familias/letanias': typeof RosarioFamiliasLetaniasRoute
+  '/rosario-familias/ofrecimiento': typeof RosarioFamiliasOfrecimientoRoute
+  '/rosario-familias/rosario': typeof RosarioFamiliasRosarioRoute
   '/rosario-jose/aves-salve': typeof RosarioJoseAvesSalveRoute
   '/rosario-jose/conclusion': typeof RosarioJoseConclusionRoute
   '/rosario-jose/iniciales': typeof RosarioJoseInicialesRoute
@@ -225,6 +277,7 @@ export interface FileRoutesByFullPath {
   '/rosario-maria/rosario': typeof RosarioMariaRosarioRoute
   '/coronilla-jose/': typeof CoronillaJoseIndexRoute
   '/rosario-espiritu/': typeof RosarioEspirituIndexRoute
+  '/rosario-familias/': typeof RosarioFamiliasIndexRoute
   '/rosario-jose/': typeof RosarioJoseIndexRoute
   '/rosario-maria/': typeof RosarioMariaIndexRoute
 }
@@ -243,6 +296,12 @@ export interface FileRoutesByTo {
   '/rosario-espiritu/letanias': typeof RosarioEspirituLetaniasRoute
   '/rosario-espiritu/ofrecimiento': typeof RosarioEspirituOfrecimientoRoute
   '/rosario-espiritu/rosario': typeof RosarioEspirituRosarioRoute
+  '/rosario-familias/aves-salve': typeof RosarioFamiliasAvesSalveRoute
+  '/rosario-familias/conclusion': typeof RosarioFamiliasConclusionRoute
+  '/rosario-familias/iniciales': typeof RosarioFamiliasInicialesRoute
+  '/rosario-familias/letanias': typeof RosarioFamiliasLetaniasRoute
+  '/rosario-familias/ofrecimiento': typeof RosarioFamiliasOfrecimientoRoute
+  '/rosario-familias/rosario': typeof RosarioFamiliasRosarioRoute
   '/rosario-jose/aves-salve': typeof RosarioJoseAvesSalveRoute
   '/rosario-jose/conclusion': typeof RosarioJoseConclusionRoute
   '/rosario-jose/iniciales': typeof RosarioJoseInicialesRoute
@@ -257,6 +316,7 @@ export interface FileRoutesByTo {
   '/rosario-maria/rosario': typeof RosarioMariaRosarioRoute
   '/coronilla-jose': typeof CoronillaJoseIndexRoute
   '/rosario-espiritu': typeof RosarioEspirituIndexRoute
+  '/rosario-familias': typeof RosarioFamiliasIndexRoute
   '/rosario-jose': typeof RosarioJoseIndexRoute
   '/rosario-maria': typeof RosarioMariaIndexRoute
 }
@@ -276,6 +336,12 @@ export interface FileRoutesById {
   '/rosario-espiritu/letanias': typeof RosarioEspirituLetaniasRoute
   '/rosario-espiritu/ofrecimiento': typeof RosarioEspirituOfrecimientoRoute
   '/rosario-espiritu/rosario': typeof RosarioEspirituRosarioRoute
+  '/rosario-familias/aves-salve': typeof RosarioFamiliasAvesSalveRoute
+  '/rosario-familias/conclusion': typeof RosarioFamiliasConclusionRoute
+  '/rosario-familias/iniciales': typeof RosarioFamiliasInicialesRoute
+  '/rosario-familias/letanias': typeof RosarioFamiliasLetaniasRoute
+  '/rosario-familias/ofrecimiento': typeof RosarioFamiliasOfrecimientoRoute
+  '/rosario-familias/rosario': typeof RosarioFamiliasRosarioRoute
   '/rosario-jose/aves-salve': typeof RosarioJoseAvesSalveRoute
   '/rosario-jose/conclusion': typeof RosarioJoseConclusionRoute
   '/rosario-jose/iniciales': typeof RosarioJoseInicialesRoute
@@ -290,6 +356,7 @@ export interface FileRoutesById {
   '/rosario-maria/rosario': typeof RosarioMariaRosarioRoute
   '/coronilla-jose/': typeof CoronillaJoseIndexRoute
   '/rosario-espiritu/': typeof RosarioEspirituIndexRoute
+  '/rosario-familias/': typeof RosarioFamiliasIndexRoute
   '/rosario-jose/': typeof RosarioJoseIndexRoute
   '/rosario-maria/': typeof RosarioMariaIndexRoute
 }
@@ -310,6 +377,12 @@ export interface FileRouteTypes {
     | '/rosario-espiritu/letanias'
     | '/rosario-espiritu/ofrecimiento'
     | '/rosario-espiritu/rosario'
+    | '/rosario-familias/aves-salve'
+    | '/rosario-familias/conclusion'
+    | '/rosario-familias/iniciales'
+    | '/rosario-familias/letanias'
+    | '/rosario-familias/ofrecimiento'
+    | '/rosario-familias/rosario'
     | '/rosario-jose/aves-salve'
     | '/rosario-jose/conclusion'
     | '/rosario-jose/iniciales'
@@ -324,6 +397,7 @@ export interface FileRouteTypes {
     | '/rosario-maria/rosario'
     | '/coronilla-jose/'
     | '/rosario-espiritu/'
+    | '/rosario-familias/'
     | '/rosario-jose/'
     | '/rosario-maria/'
   fileRoutesByTo: FileRoutesByTo
@@ -342,6 +416,12 @@ export interface FileRouteTypes {
     | '/rosario-espiritu/letanias'
     | '/rosario-espiritu/ofrecimiento'
     | '/rosario-espiritu/rosario'
+    | '/rosario-familias/aves-salve'
+    | '/rosario-familias/conclusion'
+    | '/rosario-familias/iniciales'
+    | '/rosario-familias/letanias'
+    | '/rosario-familias/ofrecimiento'
+    | '/rosario-familias/rosario'
     | '/rosario-jose/aves-salve'
     | '/rosario-jose/conclusion'
     | '/rosario-jose/iniciales'
@@ -356,6 +436,7 @@ export interface FileRouteTypes {
     | '/rosario-maria/rosario'
     | '/coronilla-jose'
     | '/rosario-espiritu'
+    | '/rosario-familias'
     | '/rosario-jose'
     | '/rosario-maria'
   id:
@@ -374,6 +455,12 @@ export interface FileRouteTypes {
     | '/rosario-espiritu/letanias'
     | '/rosario-espiritu/ofrecimiento'
     | '/rosario-espiritu/rosario'
+    | '/rosario-familias/aves-salve'
+    | '/rosario-familias/conclusion'
+    | '/rosario-familias/iniciales'
+    | '/rosario-familias/letanias'
+    | '/rosario-familias/ofrecimiento'
+    | '/rosario-familias/rosario'
     | '/rosario-jose/aves-salve'
     | '/rosario-jose/conclusion'
     | '/rosario-jose/iniciales'
@@ -388,6 +475,7 @@ export interface FileRouteTypes {
     | '/rosario-maria/rosario'
     | '/coronilla-jose/'
     | '/rosario-espiritu/'
+    | '/rosario-familias/'
     | '/rosario-jose/'
     | '/rosario-maria/'
   fileRoutesById: FileRoutesById
@@ -407,6 +495,12 @@ export interface RootRouteChildren {
   RosarioEspirituLetaniasRoute: typeof RosarioEspirituLetaniasRoute
   RosarioEspirituOfrecimientoRoute: typeof RosarioEspirituOfrecimientoRoute
   RosarioEspirituRosarioRoute: typeof RosarioEspirituRosarioRoute
+  RosarioFamiliasAvesSalveRoute: typeof RosarioFamiliasAvesSalveRoute
+  RosarioFamiliasConclusionRoute: typeof RosarioFamiliasConclusionRoute
+  RosarioFamiliasInicialesRoute: typeof RosarioFamiliasInicialesRoute
+  RosarioFamiliasLetaniasRoute: typeof RosarioFamiliasLetaniasRoute
+  RosarioFamiliasOfrecimientoRoute: typeof RosarioFamiliasOfrecimientoRoute
+  RosarioFamiliasRosarioRoute: typeof RosarioFamiliasRosarioRoute
   RosarioJoseAvesSalveRoute: typeof RosarioJoseAvesSalveRoute
   RosarioJoseConclusionRoute: typeof RosarioJoseConclusionRoute
   RosarioJoseInicialesRoute: typeof RosarioJoseInicialesRoute
@@ -421,6 +515,7 @@ export interface RootRouteChildren {
   RosarioMariaRosarioRoute: typeof RosarioMariaRosarioRoute
   CoronillaJoseIndexRoute: typeof CoronillaJoseIndexRoute
   RosarioEspirituIndexRoute: typeof RosarioEspirituIndexRoute
+  RosarioFamiliasIndexRoute: typeof RosarioFamiliasIndexRoute
   RosarioJoseIndexRoute: typeof RosarioJoseIndexRoute
   RosarioMariaIndexRoute: typeof RosarioMariaIndexRoute
 }
@@ -460,6 +555,13 @@ declare module '@tanstack/react-router' {
       path: '/rosario-jose'
       fullPath: '/rosario-jose/'
       preLoaderRoute: typeof RosarioJoseIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rosario-familias/': {
+      id: '/rosario-familias/'
+      path: '/rosario-familias'
+      fullPath: '/rosario-familias/'
+      preLoaderRoute: typeof RosarioFamiliasIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/rosario-espiritu/': {
@@ -560,6 +662,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RosarioJoseAvesSalveRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rosario-familias/rosario': {
+      id: '/rosario-familias/rosario'
+      path: '/rosario-familias/rosario'
+      fullPath: '/rosario-familias/rosario'
+      preLoaderRoute: typeof RosarioFamiliasRosarioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rosario-familias/ofrecimiento': {
+      id: '/rosario-familias/ofrecimiento'
+      path: '/rosario-familias/ofrecimiento'
+      fullPath: '/rosario-familias/ofrecimiento'
+      preLoaderRoute: typeof RosarioFamiliasOfrecimientoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rosario-familias/letanias': {
+      id: '/rosario-familias/letanias'
+      path: '/rosario-familias/letanias'
+      fullPath: '/rosario-familias/letanias'
+      preLoaderRoute: typeof RosarioFamiliasLetaniasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rosario-familias/iniciales': {
+      id: '/rosario-familias/iniciales'
+      path: '/rosario-familias/iniciales'
+      fullPath: '/rosario-familias/iniciales'
+      preLoaderRoute: typeof RosarioFamiliasInicialesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rosario-familias/conclusion': {
+      id: '/rosario-familias/conclusion'
+      path: '/rosario-familias/conclusion'
+      fullPath: '/rosario-familias/conclusion'
+      preLoaderRoute: typeof RosarioFamiliasConclusionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rosario-familias/aves-salve': {
+      id: '/rosario-familias/aves-salve'
+      path: '/rosario-familias/aves-salve'
+      fullPath: '/rosario-familias/aves-salve'
+      preLoaderRoute: typeof RosarioFamiliasAvesSalveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/rosario-espiritu/rosario': {
       id: '/rosario-espiritu/rosario'
       path: '/rosario-espiritu/rosario'
@@ -655,6 +799,12 @@ const rootRouteChildren: RootRouteChildren = {
   RosarioEspirituLetaniasRoute: RosarioEspirituLetaniasRoute,
   RosarioEspirituOfrecimientoRoute: RosarioEspirituOfrecimientoRoute,
   RosarioEspirituRosarioRoute: RosarioEspirituRosarioRoute,
+  RosarioFamiliasAvesSalveRoute: RosarioFamiliasAvesSalveRoute,
+  RosarioFamiliasConclusionRoute: RosarioFamiliasConclusionRoute,
+  RosarioFamiliasInicialesRoute: RosarioFamiliasInicialesRoute,
+  RosarioFamiliasLetaniasRoute: RosarioFamiliasLetaniasRoute,
+  RosarioFamiliasOfrecimientoRoute: RosarioFamiliasOfrecimientoRoute,
+  RosarioFamiliasRosarioRoute: RosarioFamiliasRosarioRoute,
   RosarioJoseAvesSalveRoute: RosarioJoseAvesSalveRoute,
   RosarioJoseConclusionRoute: RosarioJoseConclusionRoute,
   RosarioJoseInicialesRoute: RosarioJoseInicialesRoute,
@@ -669,9 +819,19 @@ const rootRouteChildren: RootRouteChildren = {
   RosarioMariaRosarioRoute: RosarioMariaRosarioRoute,
   CoronillaJoseIndexRoute: CoronillaJoseIndexRoute,
   RosarioEspirituIndexRoute: RosarioEspirituIndexRoute,
+  RosarioFamiliasIndexRoute: RosarioFamiliasIndexRoute,
   RosarioJoseIndexRoute: RosarioJoseIndexRoute,
   RosarioMariaIndexRoute: RosarioMariaIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}

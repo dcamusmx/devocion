@@ -48,7 +48,7 @@ export function PageShell({
     <div className={cn("min-h-screen bg-background flex justify-center", themeClass[theme])}>
       <div className="w-full max-w-xl flex flex-col">
         <header className={cn("sticky top-0 z-30 px-4 pt-4 pb-5 shadow-md", headerBg[theme])}>
-          <div className="flex items-start justify-between gap-2 mb-3">
+          <div className="mb-3 flex flex-wrap items-start justify-between gap-2">
             {backTo ? (
               <Link
                 to={backTo}
@@ -60,7 +60,7 @@ export function PageShell({
             ) : (
               <span />
             )}
-            <div className="flex items-center gap-2">
+            <div className="ml-auto flex items-center gap-2 flex-wrap justify-end">
               {headerExtra}
               <Link
                 to="/"
@@ -71,8 +71,8 @@ export function PageShell({
               </Link>
             </div>
           </div>
-          <h1 className="text-2xl font-semibold leading-tight">{title}</h1>
-          {subtitle && <p className="text-sm opacity-90 mt-1">{subtitle}</p>}
+          <h1 className="text-2xl font-semibold leading-tight break-words">{title}</h1>
+          {subtitle && <p className="text-sm opacity-90 mt-1 break-words">{subtitle}</p>}
         </header>
         {sticky && (
           <div className="sticky top-[var(--header-h,0px)] z-20 bg-background/95 backdrop-blur border-b">

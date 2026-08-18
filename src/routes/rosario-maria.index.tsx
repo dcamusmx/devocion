@@ -6,7 +6,7 @@ import { grupoDelDia, NOMBRE_DIAS } from "@/data/misterios";
 
 export const Route = createFileRoute("/rosario-maria/")({
   component: RosarioMariaIndex,
-  head: () => ({ meta: [{ title: "Rosario a María — Devocional" }] }),
+  head: () => ({ meta: [{ title: "Rosario a Santa María — Devocional" }] }),
 });
 
 function RosarioMariaIndex() {
@@ -15,7 +15,7 @@ function RosarioMariaIndex() {
   return (
     <PageShell
       theme="maria"
-      title="Rosario a María"
+      title="Rosario a Santa María"
       subtitle={`${NOMBRE_DIAS[today.getDay()]} · Misterios ${grupo}`}
       backTo="/"
       backLabel="Inicio"

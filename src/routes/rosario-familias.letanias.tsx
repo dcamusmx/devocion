@@ -1,18 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
-import { ContinueLink } from "@/components/Prayer";
-import { LETANIAS_LAURETANAS } from "@/data/letanias";
+import { ContinueLink, PrayerCard } from "@/components/Prayer";
+import { LETANIAS_FAMILIAS } from "@/data/familias";
 
-export const Route = createFileRoute("/rosario-maria/letanias")({
+export const Route = createFileRoute("/rosario-familias/letanias")({
   component: Page,
-  head: () => ({ meta: [{ title: "Letanías Lauretanas" }] }),
+  head: () => ({ meta: [{ title: "Letanías — Rosario por las familias" }] }),
 });
 
 function Page() {
   return (
-    <PageShell theme="maria" title="Letanías Lauretanas" subtitle="Rosario a Santa María · 5 de 6" backTo="/rosario-maria">
+    <PageShell theme="maria" title="Letanías" subtitle="Rosario por las familias · 5 de 6" backTo="/rosario-familias">
       <div className="space-y-5">
-        {LETANIAS_LAURETANAS.map((sec, i) => (
+        {LETANIAS_FAMILIAS.map((sec, i) => (
           <section key={i} className="rounded-2xl border bg-card p-5 shadow-sm">
             {sec.titulo && <h3 className="text-sm uppercase tracking-wider text-primary font-semibold mb-3">{sec.titulo}</h3>}
             <ul className="space-y-2">
@@ -25,7 +25,7 @@ function Page() {
             </ul>
           </section>
         ))}
-        <ContinueLink to="/rosario-maria/conclusion" label="Continuar a la Conclusión" />
+        <ContinueLink to="/rosario-familias/conclusion" label="Continuar a la Conclusión" />
       </div>
     </PageShell>
   );

@@ -5,12 +5,12 @@ import { SENAL_CRUZ, ACTO_CONTRICION, CREDO, INVOCACIONES_INICIALES } from "@/da
 
 export const Route = createFileRoute("/rosario-maria/iniciales")({
   component: Page,
-  head: () => ({ meta: [{ title: "Oraciones Iniciales — Rosario a María" }] }),
+  head: () => ({ meta: [{ title: "Oraciones Iniciales — Rosario a Santa María" }] }),
 });
 
 function Page() {
   return (
-    <PageShell theme="maria" title="Oraciones Iniciales" subtitle="Rosario a María · 1 de 6" backTo="/rosario-maria">
+    <PageShell theme="maria" title="Oraciones Iniciales" subtitle="Rosario a Santa María · 1 de 6" backTo="/rosario-maria">
       <div className="space-y-4">
         <PrayerCard title="Señal de la Cruz">{SENAL_CRUZ}</PrayerCard>
         <PrayerCard title="Acto de Contrición">{ACTO_CONTRICION}</PrayerCard>

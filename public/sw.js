@@ -17,6 +17,13 @@ const PRECACHE_URLS = [
   "/icon-192.png",
   "/icon-512.png",
   "/apple-touch-icon.png",
+  "/rosario-maria",
+  "/rosario-jose",
+  "/rosario-familias",
+  "/rosario-espiritu",
+  "/coronilla-jose",
+  "/creditos",
+  "/ajustes",
 ];
 
 self.addEventListener("install", (event) => {
@@ -51,6 +58,19 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("message", (event) => {
   if (event.data === "SKIP_WAITING") self.skipWaiting();
+  if (event.data && event.data.type === "PREFETCH_ROUTES") {
+    event.waitUntil(
+      caches.open(HTML_CACHE).then((cache) =>
+        Promise.all(
+          PRECACHE_URLS.map((url) =>
+            fetch(url, { cache: "reload" })
+              .then((res) => (res.ok ? cache.put(url, res.clone()) : undefined))
+              .catch(() => undefined),
+          ),
+        ),
+      ),
+    );
+  }
 });
 
 const TIMEOUT = 3000;

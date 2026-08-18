@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Reza con guía interactiva: Rosario a María, Rosario a San José y Coronilla a San José.",
+          "Reza con guía interactiva: Rosario a Santa María, Rosario a San José y Coronilla a San José.",
       },
       { property: "og:title", content: "Devocional — A Cristo con María y José" },
       {
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/")({
 const cards = [
   {
     to: "/rosario-maria",
-    title: "Rosario a María",
+    title: "Rosario a Santa María",
     desc: "Misterios del día con guía interactiva",
     theme: "maria" as const,
     Icon: Heart,
@@ -35,6 +35,13 @@ const cards = [
     desc: "Oraciones, misterios y letanías",
     theme: "jose" as const,
     Icon: Cross,
+  },
+  {
+    to: "/rosario-familias",
+    title: "Rosario por las familias",
+    desc: "Misterios centrados en la Sagrada Familia",
+    theme: "maria" as const,
+    Icon: Heart,
   },
   {
     to: "/rosario-espiritu",

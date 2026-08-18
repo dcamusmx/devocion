@@ -12,7 +12,7 @@ import { generarRosarioPDF } from "@/lib/rosarioPdf";
 import { grupoDelDia, type GrupoMisterio } from "@/data/misterios";
 
 interface Props {
-  variant: "maria" | "jose";
+  variant: "maria" | "jose" | "familias";
 }
 
 const GRUPOS: GrupoMisterio[] = ["Gozosos", "Dolorosos", "Gloriosos", "Luminosos"];

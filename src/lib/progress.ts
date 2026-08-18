@@ -1,6 +1,7 @@
 export type RezoVariant =
   | "rosario-maria"
   | "rosario-jose"
+  | "rosario-familias"
   | "coronilla-jose"
   | "rosario-espiritu";
 
@@ -21,13 +22,18 @@ export const VARIANT_META: Record<
   { label: string; route: string; itemLabel: string }
 > = {
   "rosario-maria": {
-    label: "Rosario a María",
+    label: "Rosario a Santa María",
     route: "/rosario-maria/rosario",
     itemLabel: "Misterio",
   },
   "rosario-jose": {
     label: "Rosario a San José",
     route: "/rosario-jose/rosario",
+    itemLabel: "Misterio",
+  },
+  "rosario-familias": {
+    label: "Rosario por las familias",
+    route: "/rosario-familias/rosario",
     itemLabel: "Misterio",
   },
   "coronilla-jose": {

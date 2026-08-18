@@ -2,24 +2,19 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { PrayerCard } from "@/components/Prayer";
 import { Button } from "@/components/ui/button";
-
-import { CONCLUSION_MARIA } from "@/data/conclusiones";
-import { CIERRE_AVE_MARIA_PURISIMA } from "@/data/common";
+import { CONCLUSION_FAMILIAS } from "@/data/familias";
 import { Home } from "lucide-react";
 
-export const Route = createFileRoute("/rosario-maria/conclusion")({
+export const Route = createFileRoute("/rosario-familias/conclusion")({
   component: Page,
-  head: () => ({ meta: [{ title: "Conclusión — Rosario a Santa María" }] }),
+  head: () => ({ meta: [{ title: "Conclusión — Rosario por las familias" }] }),
 });
 
 function Page() {
   return (
-    <PageShell theme="maria" title="Conclusión" subtitle="Rosario a Santa María · 6 de 6" backTo="/rosario-maria">
+    <PageShell theme="maria" title="Conclusión" subtitle="Rosario por las familias · 6 de 6" backTo="/rosario-familias">
       <div className="space-y-4">
-        {CONCLUSION_MARIA.map((t, i) => (
-          <PrayerCard key={i}>{t}</PrayerCard>
-        ))}
-        <PrayerCard title="Despedida">{CIERRE_AVE_MARIA_PURISIMA}</PrayerCard>
+        <PrayerCard>{CONCLUSION_FAMILIAS}</PrayerCard>
         <div className="flex justify-center pt-4">
           <Button asChild size="lg" className="rounded-full">
             <Link to="/">
@@ -28,9 +23,7 @@ function Page() {
             </Link>
           </Button>
         </div>
-        
       </div>
     </PageShell>
   );
 }
-

@@ -43,6 +43,16 @@ function Page() {
               dimvidacristo@gmail.com
             </a>
           </div>
+          <div className="border-t pt-3">
+            <a
+              href="https://dimensionvidacristo.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            >
+              Visitar Dimensión Vida Cristo
+            </a>
+          </div>
         </section>
 
         <p className="text-center text-xs text-muted-foreground">

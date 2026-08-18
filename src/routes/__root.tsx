@@ -36,7 +36,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "App devocional con guía interactiva del Rosario a María, Rosario a San José y Coronilla a San José.",
+          "App devocional con guía interactiva del Rosario a Santa María, Rosario a San José y Coronilla a San José.",
       },
       { property: "og:title", content: "Devocional — Guía de Rosarios y Coronilla" },
       { name: "twitter:title", content: "Devocional — Guía de Rosarios y Coronilla" },
@@ -50,8 +50,9 @@ export const Route = createRootRoute({
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "apple-touch-icon", href: "/favicon.svg" },
       { rel: "manifest", href: "/manifest.webmanifest" },
-      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
     ],
   }),
   shellComponent: RootShell,
