@@ -10,7 +10,7 @@ export const Route = createFileRoute("/rosario-familias/ofrecimiento")({
 
 function Page() {
   return (
-    <PageShell theme="maria" title="Ofrecimiento" subtitle="Rosario por las familias · 3 de 6" backTo="/rosario-familias">
+    <PageShell theme="maria" title="Ofrecimiento" subtitle="Etapa: Ofrecimiento" backTo="/rosario-familias">
       <div className="space-y-4">
         <PrayerCard>{OFRECIMIENTO_FAMILIAS}</PrayerCard>
         <ContinueLink to="/rosario-familias/aves-salve" label="Continuar a Aves Marías y Salve" />

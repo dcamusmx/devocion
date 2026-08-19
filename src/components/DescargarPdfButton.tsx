@@ -9,6 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { generarRosarioPDF } from "@/lib/rosarioPdf";
+import { getGrupoFamiliaDelDia } from "@/data/familias";
 import { grupoDelDia, type GrupoMisterio } from "@/data/misterios";
 
 interface Props {
@@ -18,7 +19,8 @@ interface Props {
 const GRUPOS: GrupoMisterio[] = ["Gozosos", "Dolorosos", "Gloriosos", "Luminosos"];
 
 export function DescargarPdfButton({ variant }: Props) {
-  const hoy = grupoDelDia();
+  const hoy = variant === "familias" ? getGrupoFamiliaDelDia() : grupoDelDia();
+
   return (
     <div className="flex justify-center pt-1">
       <DropdownMenu>
@@ -26,22 +28,37 @@ export function DescargarPdfButton({ variant }: Props) {
           <Button
             variant="outline"
             size="sm"
-            className="text-xs text-muted-foreground hover:text-foreground gap-1.5"
+            className="w-full max-w-[260px] justify-center gap-1.5 rounded-full border-border/80 bg-background/80 px-3 text-[11px] font-medium text-muted-foreground shadow-sm hover:text-foreground sm:w-auto sm:text-xs"
           >
             <Download className="size-3.5" />
-            Descargar PDF del Rosario
+            Descargar PDF
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="center" className="w-56">
+        <DropdownMenuContent align="center" className="w-[min(88vw,14rem)]">
           <DropdownMenuLabel className="text-xs">
             Elige los misterios
           </DropdownMenuLabel>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem
+            onClick={() => generarRosarioPDF(variant, hoy)}
+            className="justify-between text-sm"
+          >
+            <span>
+              Descargar hoy
+              {hoy && (
+                <span className="ml-1 text-[10px] text-muted-foreground">
+                  ({hoy})
+                </span>
+              )}
+            </span>
+            <Check className="size-3.5 opacity-60" />
+          </DropdownMenuItem>
           <DropdownMenuSeparator />
           {GRUPOS.map((g) => (
             <DropdownMenuItem
               key={g}
               onClick={() => generarRosarioPDF(variant, g)}
-              className="text-sm justify-between"
+              className="justify-between text-sm"
             >
               <span>
                 Misterios {g}

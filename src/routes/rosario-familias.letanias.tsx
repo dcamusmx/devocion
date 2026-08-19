@@ -10,7 +10,7 @@ export const Route = createFileRoute("/rosario-familias/letanias")({
 
 function Page() {
   return (
-    <PageShell theme="maria" title="Letanías" subtitle="Rosario por las familias · 5 de 6" backTo="/rosario-familias">
+    <PageShell theme="maria" title="Letanías" subtitle="Etapa: Letanías" backTo="/rosario-familias">
       <div className="space-y-5">
         {LETANIAS_FAMILIAS.map((sec, i) => (
           <section key={i} className="rounded-2xl border bg-card p-5 shadow-sm">

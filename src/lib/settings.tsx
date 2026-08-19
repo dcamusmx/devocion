@@ -2,12 +2,14 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from "
 
 export type FontSize = "s" | "m" | "l" | "xl";
 export type Theme = "light" | "dark";
+export type IconSet = "1" | "2";
 
 export interface Settings {
   theme: Theme;
   fontSize: FontSize;
   sound: boolean;
   vibration: boolean;
+  iconSet: IconSet;
 }
 
 const DEFAULTS: Settings = {
@@ -15,6 +17,7 @@ const DEFAULTS: Settings = {
   fontSize: "m",
   sound: true,
   vibration: true,
+  iconSet: "1",
 };
 
 const STORAGE_KEY = "devocional.settings.v1";

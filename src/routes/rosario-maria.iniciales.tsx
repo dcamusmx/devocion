@@ -10,7 +10,7 @@ export const Route = createFileRoute("/rosario-maria/iniciales")({
 
 function Page() {
   return (
-    <PageShell theme="maria" title="Oraciones Iniciales" subtitle="Rosario a Santa María · 1 de 6" backTo="/rosario-maria">
+    <PageShell theme="maria" title="Oraciones Iniciales" subtitle="Etapa: Oraciones iniciales" backTo="/rosario-maria">
       <div className="space-y-4">
         <PrayerCard title="Señal de la Cruz">{SENAL_CRUZ}</PrayerCard>
         <PrayerCard title="Acto de Contrición">{ACTO_CONTRICION}</PrayerCard>

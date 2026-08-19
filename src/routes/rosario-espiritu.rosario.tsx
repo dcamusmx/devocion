@@ -12,7 +12,7 @@ function Page() {
     <PageShell
       theme="espiritu"
       title="Siete Misterios"
-      subtitle="Rosario al Espíritu Santo · 2 de 5"
+      subtitle="Etapa: Rosario"
       backTo="/rosario-espiritu"
     >
       <RezoEspiritu continueTo="/rosario-espiritu/ofrecimiento" />

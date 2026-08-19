@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { Rezo } from "@/components/Rezo";
 import { MisteriosDialog } from "@/components/MisteriosDialog";
-import { MISTERIOS_FAMILIAS } from "@/data/familias";
+import { getGrupoFamiliaDelDia, getMisteriosFamiliasDelDia } from "@/data/familias";
 
 export const Route = createFileRoute("/rosario-familias/rosario")({
   component: Page,
@@ -10,17 +10,20 @@ export const Route = createFileRoute("/rosario-familias/rosario")({
 });
 
 function Page() {
+  const grupo = getGrupoFamiliaDelDia();
+  const items = getMisteriosFamiliasDelDia();
+
   return (
     <PageShell
       theme="maria"
-      title="Misterios del día"
-      subtitle="Rosario por las familias · 2 de 6"
+      title={`Misterios ${grupo}`}
+      subtitle="Etapa: Rosario"
       backTo="/rosario-familias"
       headerExtra={<MisteriosDialog />}
     >
       <Rezo
         variant="rosario-familias"
-        items={MISTERIOS_FAMILIAS}
+        items={items}
         itemLabel="Misterio"
         continueTo="/rosario-familias/ofrecimiento"
       />

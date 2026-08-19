@@ -20,7 +20,7 @@ const ORACION_ESPIRITU_SANTO_2 =
 
 function Page() {
   return (
-    <PageShell theme="coronilla" title="Oraciones Iniciales" subtitle="Coronilla a San José · 1 de 6" backTo="/coronilla-jose">
+    <PageShell theme="coronilla" title="Oraciones Iniciales" subtitle="Etapa: Oraciones iniciales" backTo="/coronilla-jose">
       <div className="space-y-4">
         <PrayerCard title="1. Invocación al Espíritu Santo">{INVOCACION_ESPIRITU_SANTO}</PrayerCard>
         <PrayerCard title="2. Oración a San José">{ORACION_SAN_JOSE}</PrayerCard>

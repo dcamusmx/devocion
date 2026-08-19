@@ -190,6 +190,14 @@ export function Rezo({
             {currentPrayer.label}
           </div>
           <p className="leading-relaxed text-foreground">{currentPrayer.text}</p>
+
+          {currentPrayer.label === aveLabel && (
+            <div className="mt-4 flex justify-center">
+              <span className="inline-flex items-center rounded-full border border-primary/20 bg-background px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-primary shadow-sm">
+                {aveLabel} · {aveCount} de 10
+              </span>
+            </div>
+          )}
         </section>
       )}
 

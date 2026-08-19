@@ -18,7 +18,7 @@ function Page() {
     <PageShell
       theme="espiritu"
       title="Oraciones Iniciales"
-      subtitle="Rosario al Espíritu Santo · 1 de 5"
+      subtitle="Etapa: Oraciones iniciales"
       backTo="/rosario-espiritu"
     >
       <div className="space-y-4">

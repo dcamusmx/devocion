@@ -14,6 +14,7 @@ import {
   CIERRE_AVE_MARIA_PURISIMA,
 } from "@/data/common";
 import { MISTERIOS, type GrupoMisterio } from "@/data/misterios";
+import { MISTERIOS_FAMILIAS } from "@/data/familias";
 import {
   LETANIAS_LAURETANAS,
   LETANIAS_SAN_JOSE,
@@ -34,7 +35,9 @@ function buildBlocks(variant: Variant, grupo: GrupoMisterio): Block[] {
   const titulo =
     variant === "maria"
       ? "Santo Rosario a la Santísima Virgen María"
-      : "Santo Rosario a San José";
+      : variant === "familias"
+        ? "Santo Rosario por las familias"
+        : "Santo Rosario a San José";
   b.push({ kind: "h1", text: titulo });
   b.push({ kind: "small", text: `Misterios ${grupo}` });
   b.push({ kind: "rule" });
@@ -50,9 +53,10 @@ function buildBlocks(variant: Variant, grupo: GrupoMisterio): Block[] {
   b.push({ kind: "p", text: INVOCACIONES_INICIALES });
 
   // Misterios
+  const misteriosDelGrupo = variant === "familias" ? MISTERIOS_FAMILIAS[grupo] : MISTERIOS[grupo];
   b.push({ kind: "rule" });
   b.push({ kind: "h1", text: `Misterios ${grupo}` });
-  for (const m of MISTERIOS[grupo]) {
+  for (const m of misteriosDelGrupo) {
     b.push({ kind: "h2", text: `${m.numero}. ${m.titulo}` });
     if (m.meditacion) b.push({ kind: "p", text: m.meditacion });
     if (m.cita) b.push({ kind: "p", text: m.cita });
@@ -62,7 +66,9 @@ function buildBlocks(variant: Variant, grupo: GrupoMisterio): Block[] {
       text:
         variant === "maria"
           ? "Padre Nuestro · 10 Avemarías · Gloria · María, Madre de gracia · Oh Jesús mío."
-          : "Padre Nuestro · 10 Avemarías · Gloria · María, Madre de gracia · Oh Jesús mío · San José, terror de los demonios.",
+          : variant === "familias"
+            ? "Padre Nuestro · 10 Avemarías · Gloria · María, Madre de gracia · Oh Jesús mío."
+            : "Padre Nuestro · 10 Avemarías · Gloria · María, Madre de gracia · Oh Jesús mío · San José, terror de los demonios.",
     });
     b.push({ kind: "spacer" });
   }

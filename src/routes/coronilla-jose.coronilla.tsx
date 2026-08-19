@@ -10,7 +10,7 @@ export const Route = createFileRoute("/coronilla-jose/coronilla")({
 
 function Page() {
   return (
-    <PageShell theme="coronilla" title="Coronilla" subtitle="Coronilla a San José · 2 de 6" backTo="/coronilla-jose">
+    <PageShell theme="coronilla" title="Coronilla" subtitle="Etapa: Coronilla" backTo="/coronilla-jose">
       <Rezo
         variant="coronilla-jose"
         items={VIRTUDES_SAN_JOSE}

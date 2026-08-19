@@ -14,7 +14,7 @@ export const Route = createFileRoute("/rosario-jose/conclusion")({
 
 function Page() {
   return (
-    <PageShell theme="jose" title="Conclusión" subtitle="Rosario a San José · 6 de 6" backTo="/rosario-jose">
+    <PageShell theme="jose" title="Conclusión" subtitle="Etapa: Conclusión" backTo="/rosario-jose">
       <div className="space-y-4">
         <PrayerCard title="A San José">{CONCLUSION_JOSE}</PrayerCard>
         <PrayerCard title="Despedida">{CIERRE_AVE_MARIA_PURISIMA}</PrayerCard>

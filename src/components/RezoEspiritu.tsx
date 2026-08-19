@@ -152,6 +152,12 @@ export function RezoEspiritu({ continueTo }: { continueTo: string }) {
           <p className="leading-relaxed mt-1">
             <strong>R.</strong> {ORACION_REPETIDA_RESP}
           </p>
+
+          <div className="mt-4 flex justify-center">
+            <span className="inline-flex items-center rounded-full border border-primary/20 bg-background px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-primary shadow-sm">
+              Oración · {step} de 7
+            </span>
+          </div>
         </section>
       )}
 

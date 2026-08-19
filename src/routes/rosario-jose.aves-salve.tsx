@@ -10,7 +10,7 @@ export const Route = createFileRoute("/rosario-jose/aves-salve")({
 
 function Page() {
   return (
-    <PageShell theme="jose" title="Aves Marías y Salve" subtitle="Rosario a San José · 4 de 6" backTo="/rosario-jose">
+    <PageShell theme="jose" title="Aves Marías y Salve" subtitle="Etapa: Aves Marías y Salve" backTo="/rosario-jose">
       <div className="space-y-4">
         {AVES_MARIAS_SALVE.map((t, i) => (
           <PrayerCard key={i} title={i < 3 ? `Avemaría ${i + 1}` : "Salve"}>

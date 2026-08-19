@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
-import { useSettings, type FontSize, type Theme } from "@/lib/settings";
+import { useSettings, type FontSize, type IconSet, type Theme } from "@/lib/settings";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -23,6 +23,17 @@ function Page() {
               { value: "dark", label: "Oscuro" },
             ]}
             onChange={(v) => update("theme", v as Theme)}
+          />
+        </Card>
+
+        <Card title="Iconos de los rosarios">
+          <SegmentedGroup
+            value={settings.iconSet}
+            options={[
+              { value: "1", label: "Opción 1" },
+              { value: "2", label: "Opción 2" },
+            ]}
+            onChange={(v) => update("iconSet", v as IconSet)}
           />
         </Card>
 

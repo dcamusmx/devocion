@@ -15,7 +15,7 @@ function Page() {
     <PageShell
       theme="jose"
       title={`Misterios ${grupo}`}
-      subtitle="Rosario a San José · 2 de 6"
+      subtitle="Etapa: Rosario"
       backTo="/rosario-jose"
       headerExtra={<MisteriosDialog />}
     >
